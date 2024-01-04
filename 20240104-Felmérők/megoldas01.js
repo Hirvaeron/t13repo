@@ -1,0 +1,10 @@
+let nev="Bodnár Alex Dániel";
+let csoport="Ruander #Team13";
+let html=95;
+let css=80;
+let js=80;
+document.write(`Név: ${nev}`);
+document.write(`<br>Csoport: ${csoport}`);
+document.write(`<br>HTML: ${html}`);
+document.write(`<br>CSS: ${css}`);
+document.write(`<br>JavaScript: ${js}`);
