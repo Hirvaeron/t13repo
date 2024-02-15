@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Ruander #Team13 - Bodnár Alex">
+    <meta name="description" content="FIFA ranglista - Megoldás DOM-ban">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <title>FIFA ranglista</title>
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="text-center">FIFA világranglista</h1>
+        <!--1. feladat-->
+        <h2>Hány csapat szerepel a világranglistán?</h2>
+        <p id="f1"></p>
+
+        <!--2. feladat-->
+        <h2>Mennyi a résztvevő csapatok átlagpontszáma?</h2>
+        <p id="f2"></p>
+
+        <!--3. feladat-->
+        <h2>Átlagfeletti pontszámmal rendelkező csapatok listája</h2>
+        <button type="button" class="btn btn-dark w-100 my-3" id="f3feladat">Csapatok megjelenítése</button>
+        <table id="f3" class="table table-dark table-striped table-hover table-sm table-bordered">
+            <tr>
+                <th>Ország</th>
+            </tr>
+        </table>
+
+        <!--4. feladat-->
+        <h2>Legtöbbet javító csapat adatai</h2>
+        <button type="button" class="btn btn-dark w-100 my-3" id="f4feladat">Csapat megjelenítése</button>
+        <p id="f4"></p>
+
+        <!--5. feladat-->
+        <h2>Adott ország szerepel-e a listán? Igen/Nem</h2>
+        <input type="text" class="form-control" id="orszagNeve">
+        <button type="button" class="btn btn-dark w-100 my-3" id="f5feladat">Csapat megadása</button>
+        <p id="f5"></p>
+
+        <!--6. feladat-->
+        <h2>Csapat statisztika változás alapján (2db-nál több esetén)</h2>
+        <button type="button" class="btn btn-dark w-100 my-3" id="f6feladat">Statisztika megjelenítése</button>
+        <table id="f6" class="table table-dark table-striped table-hover table-sm table-bordered">
+            <tr>
+                <th>Változás mértéke</th>
+                <th>Változások mennyisége</th>
+            </tr>
+        </table>
+    </div>
+    <script src="js/fifaForras.js"></script>
+</body>
+
+</html>
