@@ -202,12 +202,15 @@ function StatisztikaTablazatGenerator() {
     let valtozasTipusok = ValtozasTipusok(fifaAdatok);
     let valtozasMennyisegek = ValtozasokMennyisege(fifaAdatok, valtozasTipusok);
     var table = document.querySelector("#f6");
-    for (let i = 0; i < evek.length; i++) {
-        var adatSor = table.insertRow(1);
-        var tipus = adatSor.insertCell(0);
-        var mennyiseg = adatSor.insertCell(1);
-        tipus.innerHTML = valtozasTipusok[i];
-        mennyiseg.innerHTML = valtozasMennyisegek[i];
+    for (let i = 0; i < valtozasTipusok.length; i++) {
+        if (valtozasMennyisegek[i] > 1) {
+            var adatSor = table.insertRow(1);
+            var tipus = adatSor.insertCell(0);
+            var mennyiseg = adatSor.insertCell(1);
+            tipus.innerHTML = valtozasTipusok[i];
+            mennyiseg.innerHTML = valtozasMennyisegek[i];
+        }
+
     }
 }
 
