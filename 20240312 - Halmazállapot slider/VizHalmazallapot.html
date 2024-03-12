@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Bodnár Alex">
+    <title>Halmazállapot - Range</title>
+    <style>
+        img {
+            width: 200px;
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <img id="aggregation" src="img/ice.jpg" alt="Szilárd halmazállapot" title="Szilárd halmazállapot">
+    <input id="temperatureRange" type="range" min="-200" max="200" oninput="HalmazallapotValtozas()">
+    <p>Jelenlegi hőmérséklet: <span id="currentTemperature">0</span> Celsius fok</p>
+    <script>
+        function HalmazallapotValtozas() {
+            let homerseklet = document.querySelector("#temperatureRange").value;
+            let kep = document.querySelector("#aggregation");
+            document.querySelector("#currentTemperature").innerHTML = homerseklet;
+            if (homerseklet >= 100) {
+                kep.src = "img/steam.jpg";
+                kep.alt = "Gőz halmazállapot";
+                kep.title = "Gőz halmazállapot";
+            } else if (homerseklet > 0) {
+                kep.src = "img/water.jpg";
+                kep.alt = "Folyékony halmazállapot";
+                kep.title = "Folyékony halmazállapot";
+            } else {
+                kep.src = "img/ice.jpg";
+                kep.alt = "Szilárd halmazállapot";
+                kep.title = "Szilárd halmazállapot";
+            }
+        }
+    </script>
+</body>
+
+</html>
