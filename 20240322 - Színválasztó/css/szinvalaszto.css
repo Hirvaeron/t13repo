@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Linden+Hill:ital@0;1&display=swap');
+
+body {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    background-color: black;
+    font-family: "Linden Hill", sans-serif;
+    font-weight: bold;
+}
+
+#RGBkodMegjelenito {
+    font-size: 200px;
+}
+
+#HEXkodMegjelenito {
+    font-size: 100px;
+}
+
+#keveroFelulet {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    border-width: 1px;
+    border-color: white;
+    border-style: solid;
+    box-shadow: 5px 5px 10px white;
+    padding: 10px;
+    border-bottom-right-radius: 50px;
+}

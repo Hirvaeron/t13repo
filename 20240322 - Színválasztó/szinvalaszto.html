@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Bodnár Alex">
+    <link rel="stylesheet" href="css/szinvalaszto.css">
+    <title>Színválasztó</title>
+</head>
+
+<body>
+    <div id="keveroFelulet">
+        <label for="redSet">Red(piros)</label>
+        <input type="range" min="0" max="255" value="0" id="redSet" class="colors">
+        <p id="redValue">0</p>
+
+        <label for="greenSet">Green(zöld)</label>
+        <input type="range" min="0" max="255" value="0" id="greenSet" class="colors">
+        <p id="greenValue">0</p>
+
+        <label for="blueSet">Blue(kék)</label>
+        <input type="range" min="0" max="255" value="0" id="blueSet" class="colors">
+        <p id="blueValue">0</p>
+    </div>
+    <div id="RGBkodMegjelenito">
+        rgb(0,0,0);
+    </div>
+    <div id="HEXkodMegjelenito">
+        #000000;
+    </div>
+    <script src="js/szinvalaszto.js"></script>
+</body>
+
+</html>
