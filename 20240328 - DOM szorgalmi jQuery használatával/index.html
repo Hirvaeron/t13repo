@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery DOM szorgalmi</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <style>
+        #animaltDiv {
+            width: 100px;
+            height: 100px;
+            background-color: green;
+        }
+
+        #homersekletKep {
+            width: 100px;
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>jQuery DOM - szorgalmi feladatsor</h1>
+    <h2>1. feladat - Div eltűnés/megjelenítés</h2>
+    <div id="animaltDiv"></div>
+    <button id="effektGomb">Div animáció</button>
+
+    <h2>2. feladat - Karakterszám kiírása</h2>
+    <input type="text" id="szovegInput">
+    <p id="karakterszam">Karakterszám: </p>
+
+    <h2>3. feladat - Input mező tartalmának elrejtése / megjelenítése</h2>
+    <input type="text" id="lathatosagInput">
+    <button id="lathatosagValtozas">Láthatóság szabályzása</button>
+
+    <h2>4. feladat - Halmazállapot</h2>
+    <img src="img/water.jpg" alt="folyékony" title="folyékony" id="homersekletKep">
+    <input type="number" min="-100" max="200" value="0" id="homersekletErtek">
+    <script>
+        $(document).ready(function () {
+            $("#effektGomb").click(function () {
+                $("#animaltDiv").slideToggle();
+            });
+
+            $("#szovegInput").on("input", function () {
+                let inputMezoTartalma = $(this).val();
+                let eredmeny = inputMezoTartalma.length;
+                $("#karakterszam").text("Karakterszám: " + eredmeny);
+            });
+
+            $("#lathatosagValtozas").click(function () {
+                let aktualisTipus = $("#lathatosagInput").attr("type");
+                if (aktualisTipus == "text") {
+                    $("#lathatosagInput").attr("type", "password");
+                } else {
+                    $("#lathatosagInput").attr("type", "text");
+                }
+            });
+
+            $("#homersekletErtek").on("input", function () {
+                let aktualisHomerseklet = $(this).val();
+                if (aktualisHomerseklet < 0) {
+                    $("#homersekletKep").attr("src", "img/ice.jpg");
+                    $("#homersekletKep").attr("alt", "szilárd");
+                    $("#homersekletKep").attr("title", "szilárd");
+                } else if (aktualisHomerseklet > 100) {
+                    $("#homersekletKep").attr("src", "img/steam.jpg");
+                    $("#homersekletKep").attr("alt", "légnemű");
+                    $("#homersekletKep").attr("title", "légnemű");
+                } else {
+                    $("#homersekletKep").attr("src", "img/water.jpg");
+                    $("#homersekletKep").attr("alt", "folyékony");
+                    $("#homersekletKep").attr("title", "folyékony");
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
