@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Klikkelő feladat</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <style>
+        body {
+            background-color: #454545;
+        }
+
+        #ugraloFelirat {
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            width: 50px;
+            padding: 30px;
+            font-size: 20px;
+            text-align: center;
+            background-color: #FF6000;
+            color: white;
+            border-radius: 50px;
+            box-shadow: #FFA559 5px 5px 10px;
+            cursor: pointer;
+        }
+
+        #szamlalo {
+            color: black;
+            position: fixed;
+            top: 0px;
+            left: 50%;
+            width: 50px;
+            transform: translate(-25px);
+            text-align: center;
+            background-color: #FFE6C7;
+            border-bottom-left-radius: 20px;
+            border-bottom-right-radius: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="ugraloFelirat">Kattints Ide!</div>
+    <div id="szamlalo">0</div>
+    <script>
+        $(document).ready(function () {
+            $("#ugraloFelirat").click(function () {
+                let ablakMagassag = $(window).height();
+                let ablakSzelesseg = $(window).width();
+                let randomTopErtek = Math.round(Math.random() * ablakMagassag);
+                let randomLeftErtek = Math.round(Math.random() * ablakSzelesseg);
+                $(this).css("top", randomTopErtek + "px");
+                $(this).css("left", randomLeftErtek + "px");
+                $("#szamlalo").text(parseInt($("#szamlalo").text()) + 1);
+            });
+        });
+    </script>
+</body>
+
+</html>
